@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 @EnableAutoConfiguration
-public class HelloWorldController {
+public class HeroesController {
 
     @GetMapping("/")
     public String index(Model model) {
