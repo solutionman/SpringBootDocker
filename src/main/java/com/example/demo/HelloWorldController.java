@@ -2,18 +2,17 @@ package com.example.demo;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 @EnableAutoConfiguration
 public class HelloWorldController {
 
-    @RequestMapping("/")
-    @ResponseBody
-    public String sayHello(){
-        return "Hello world from controller";
+    @GetMapping("/")
+    public String index(Model model) {
+        model.addAttribute("eventName", "Super Heroes");
+        return "index";
     }
 
 }

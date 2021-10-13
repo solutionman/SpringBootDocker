@@ -1,0 +1,68 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Include Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+<body>
+<div class="container-fluid">
+    <h3 class="display-3">Docker running Spring Boot application with Vue.js</h3>
+
+    <div id="contents-main">
+        <div class="lead">
+            <strong>Name of Event:</strong>
+            <span th:text="${eventName}"></span>
+        </div>
+        <div id="contents">
+            <ul>
+                <li style="list-style-type:none" v-for="player in players">
+                    <player-card
+                            v-bind:player="player" v-bind:key="player.id">
+                    </player-card>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+<script type="text/babel">
+
+    Vue.component('player-card', {
+        props: ['player'],
+        template: `<div class="card">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            {{ player.name }}
+                        </h6>
+                        <p class="card-text">
+                            <div>
+                            {{ player.description }}
+                            </div>
+                        </p>
+                    </div>
+                </div>`
+    });
+
+    var app = new Vue({
+        el: '#contents',
+        data: {
+            players: [
+                {id: "1", name: "Arnold Schwarzenegger", description: "Terminator"},
+                {id: "2", name: "Sylvester Stallone", description: "Rocky"}
+            ]
+        }
+    });
+
+</script>
+</body>
+</html>
