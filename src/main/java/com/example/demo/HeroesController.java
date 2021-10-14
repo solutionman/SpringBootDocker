@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.entity.Hero;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +12,9 @@ public class HeroesController {
 
     @GetMapping("/")
     public String index(Model model) {
+        Hero arnold = new Hero("Arnold Schwarzenegger", "Terminator");
+        Hero sylvester = new Hero("Sylvester Stallone", "Rocky");
+
         model.addAttribute("eventName", "Super Heroes");
         return "index";
     }
