@@ -23,4 +23,10 @@ sudo docker rm "CONTAINER ID"
 to remove image:<br>
 sudo docker image rm "IMAGE ID"
 
+to run both app and postgresql:<br>
+sudo docker-compose up
 
+to stop:<br>
+Ctrl + c
+or
+sudo docker-compose down
