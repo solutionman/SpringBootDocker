@@ -48,6 +48,15 @@
             <artifactId>maven-lombok-plugin</artifactId>
             <version>0.9.3.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>pgadba</artifactId>
+            <version>0.1.1-ALPHA</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

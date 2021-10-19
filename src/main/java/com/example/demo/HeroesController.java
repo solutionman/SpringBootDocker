@@ -12,8 +12,8 @@ public class HeroesController {
 
     @GetMapping("/")
     public String index(Model model) {
-        Hero arnold = new Hero("Arnold Schwarzenegger", "Terminator");
-        Hero sylvester = new Hero("Sylvester Stallone", "Rocky");
+        Hero arnold = new Hero();
+        Hero sylvester = new Hero();
 
         model.addAttribute("eventName", "Super Heroes");
         return "index";
