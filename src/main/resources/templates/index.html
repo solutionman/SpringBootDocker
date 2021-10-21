@@ -20,7 +20,10 @@
         <div class="lead">
             <strong>Name of Event:</strong>
             <span th:text="${eventName}"></span>
+            <span th:text="${hero}"></span>
+            <span th:text="${test}"></span>
         </div>
+        <div>Some text here</div>
         <div id="contents">
             <ul>
                 <li style="list-style-type:none" v-for="player in players">
@@ -58,7 +61,7 @@
         data: {
             players: [
                 {id: "1", name: "Arnold Schwarzenegger", description: "Terminator"},
-                {id: "2", name: "Sylvester Stallone", description: "Rocky"}
+                {id: "2", name: "Sylvester Stallone222", description: "Rocky"}
             ]
         }
     });

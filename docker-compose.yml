@@ -6,7 +6,7 @@ services:
     container_name: demo
     ports:
       - "8080:8080"
-    restart: always
+#    restart: always
     depends_on:
       - db
     environment:
@@ -21,6 +21,6 @@ services:
       - "5432:5432"
     environment:
       POSTGRES_PASSWORD: 123
-      POSTGRES_DB: docker_test
+      POSTGRES_USER: docker_test
       PGDATA: /var/lib/postgresql/data/pgdata
-    restart: always
+#    restart: always
