@@ -9,6 +9,8 @@ to run:
 
 sudo docker-compose up
 
+http://localhost:8080/
+
 to clean:
 
 sudo docker ps -a
