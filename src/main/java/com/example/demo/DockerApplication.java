@@ -15,7 +15,7 @@ import java.util.List;
 
 @SpringBootApplication
 public class DockerApplication {
-    private Logger logger = LoggerFactory.getLogger(DockerApplication.class);
+    private final Logger logger = LoggerFactory.getLogger(DockerApplication.class);
 
     @Autowired
     HeroRepository heroRepository;
@@ -32,6 +32,6 @@ public class DockerApplication {
         hero.setActorName("Arnold");
         this.heroRepository.save(hero);
         List<Hero> allHeroes = heroRepository.findAll();
-        logger.info("Heroes: " + allHeroes.size());
+        logger.info("Heroes: {}", allHeroes.size());
     }
 }

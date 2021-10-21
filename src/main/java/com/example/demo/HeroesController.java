@@ -2,6 +2,8 @@ package com.example.demo;
 
 import com.example.demo.entity.Hero;
 import com.example.demo.repository.HeroRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,8 @@ import java.util.List;
 @EnableAutoConfiguration
 public class HeroesController {
 
+    private final Logger logger = LoggerFactory.getLogger(HeroesController.class);
+
     @Autowired
     private HeroRepository heroRepository;
 
@@ -24,7 +28,12 @@ public class HeroesController {
         hero.setActorName("Arnold");
         this.heroRepository.save(hero);
         List<Hero> heroes = this.heroRepository.findAll();
-        java.lang.System.out.println("search in hero repository");
+        logger.info("search in hero repository");
+        if(!heroes.isEmpty()){
+            for(Hero h : heroes){
+                logger.info("Actor name {} Hero name {}",h.getActorName(), h.getHeroName());
+            }
+        }
         model.addAttribute("hero", heroes.get(0).getHeroName());
 
         model.addAttribute("test", "test");
