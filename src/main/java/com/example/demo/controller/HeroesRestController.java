@@ -18,6 +18,6 @@ public class HeroesRestController {
     @GetMapping(path = "{heroId}")
     public String  getHero(@PathVariable("heroId") Long id){
         Hero hero = heroRepository.getOne(id);
-        return hero.getHeroName();
+        return hero.toString();
     }
 }
