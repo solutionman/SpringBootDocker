@@ -14,6 +14,9 @@ app: http://localhost:8080/
 
 api: http://localhost:8080/api/v1/heroes/1
 
+user: User  
+password: 12345678
+
 to clean:
 ```bash
 sudo docker ps -a
