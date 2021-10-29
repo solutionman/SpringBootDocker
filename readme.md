@@ -16,6 +16,8 @@ api: http://localhost:8080/api/v1/heroes/1
 
 user: User  
 password: 12345678
+user: Admin  
+password: 87654321
 
 to clean:
 ```bash
