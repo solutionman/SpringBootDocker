@@ -8,10 +8,10 @@ import javax.persistence.Id;
 
 @Entity
 @Data
-public class Hero {
+public class AppUser {
     @Id
     @GeneratedValue
     private Long id;
-    private String actorName;
-    private String heroName;
+    private String userName;
+    private String password;
 }
