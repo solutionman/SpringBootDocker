@@ -35,7 +35,7 @@ public class DockerApplication {
     }
 
     @EventListener(ApplicationReadyEvent.class)
-    public void runAfterStartup(){
+    public void runAfterStartup() {
         Hero hero = new Hero();
         hero.setHeroName("Terminator");
         hero.setActorName("Arnold");
@@ -43,16 +43,19 @@ public class DockerApplication {
         List<Hero> allHeroes = heroRepository.findAll();
         logger.info("Heroes: {}", allHeroes.size());
 
-        AppUser user = new AppUser();
-        user.setUserName("User");
-        user.setPassword(passwordEncoder.encode("12345678"));
-        userRepository.save(user);
-        logger.info("User: {} Pass: {}", user.getUserName(), user.getPassword());
+        if (userRepository.findAll().isEmpty()) {
+            AppUser user = new AppUser();
+            user.setUserName("User");
+            user.setPassword(passwordEncoder.encode("12345678"));
+            userRepository.save(user);
+            logger.info("User: {} Pass: {}", user.getUserName(), user.getPassword());
 
-        AppUser userAdmin = new AppUser();
-        userAdmin.setUserName("Admin");
-        userAdmin.setPassword(passwordEncoder.encode("87654321"));
-        userRepository.save(userAdmin);
-        logger.info("User: {} Pass: {}", userAdmin.getUserName(), userAdmin.getPassword());
+            AppUser userAdmin = new AppUser();
+            userAdmin.setUserName("Admin");
+            userAdmin.setPassword(passwordEncoder.encode("87654321"));
+            userRepository.save(userAdmin);
+            logger.info("User: {} Pass: {}", userAdmin.getUserName(), userAdmin.getPassword());
+        }
+
     }
 }
