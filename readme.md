@@ -14,6 +14,8 @@ app: http://localhost:8080/
 
 api: http://localhost:8080/api/v1/heroes/1
 
+users api: http://localhost:8080/api/users
+
 user: User  
 password: 12345678  
 user: Admin  
