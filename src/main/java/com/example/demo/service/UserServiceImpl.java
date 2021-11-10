@@ -6,18 +6,40 @@ import com.example.demo.repository.AppUserRepository;
 import com.example.demo.repository.RolesRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Slf4j
 @Transactional
 @Service
 @AllArgsConstructor
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService, UserDetailsService {
     private final AppUserRepository appUserRepository;
     private final RolesRepository rolesRepository;
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        AppUser appUser = appUserRepository.findAppUserByUserName(username);
+        if(appUser == null){
+            log.error("Not found user: {} in Database", username);
+            throw new UsernameNotFoundException("User not found");
+        } else {
+            log.error("User: {} found in Database", username);
+        }
+        Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
+        appUser.getRoles().forEach(role -> {
+            authorities.add(new SimpleGrantedAuthority(role.getName()));
+        });
+        return new org.springframework.security.core.userdetails.User(appUser.getUserName(), appUser.getPassword(), authorities);
+    }
 
     @Override
     public AppUser saveUser(AppUser appUser) {

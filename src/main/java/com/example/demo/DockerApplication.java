@@ -69,6 +69,7 @@ public class DockerApplication {
     // Another way to add something to DB after start application
     @Bean
     CommandLineRunner run(UserService userService) {
+
         return args -> {
             userService.saveRole(new Role(null, "ROLE_USER"));
             userService.saveRole(new Role(null, "ROLE_MANAGER"));
