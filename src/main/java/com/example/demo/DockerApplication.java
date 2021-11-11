@@ -75,10 +75,10 @@ public class DockerApplication {
             userService.saveRole(new Role(null, "ROLE_MANAGER"));
             userService.saveRole(new Role(null, "ROLE_ADMIN"));
 
-            userService.saveUser(new AppUser(null, "SuperUser", passwordEncoder.encode("12345678"), new HashSet<>()));
+            userService.saveUser(new AppUser(null, "SuperUser", "12345678", new HashSet<>()));
             userService.addRoleToAppUser("SuperUser", "ROLE_USER");
 
-            userService.saveUser(new AppUser(null, "SuperAdmin", passwordEncoder.encode("87654321"), new HashSet<>()));
+            userService.saveUser(new AppUser(null, "SuperAdmin", "87654321", new HashSet<>()));
             userService.addRoleToAppUser("SuperAdmin", "ROLE_ADMIN");
         };
     }
