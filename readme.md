@@ -21,6 +21,13 @@ password: 12345678
 user: Admin  
 password: 87654321
 
+Postman:
+POST http://localhost:8080/api/login
+Body:
+x-www-form-urlencoded
+username SuperUser
+password 12345678
+
 to clean:
 ```bash
 sudo docker ps -a
