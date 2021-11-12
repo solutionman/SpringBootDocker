@@ -28,6 +28,12 @@ x-www-form-urlencoded
 username SuperUser
 password 12345678
 
+Postman:
+GET http://localhost:8080/api/users
+Headers:
+Key Authorisation
+Value Bearer asdfasdf
+
 to clean:
 ```bash
 sudo docker ps -a
