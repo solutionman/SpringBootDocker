@@ -27,13 +27,13 @@ Body:
 x-www-form-urlencoded
 username SuperUser
 password 12345678
-
+![](pics/post.png)
 Postman:
 GET http://localhost:8080/api/users
 Headers:
 Key Authorization
 Value Bearer + (value from access_token)
-
+![](pics/get.png)
 to clean:
 ```bash
 sudo docker ps -a
