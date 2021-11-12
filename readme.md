@@ -31,8 +31,8 @@ password 12345678
 Postman:
 GET http://localhost:8080/api/users
 Headers:
-Key Authorisation
-Value Bearer asdfasdf
+Key Authorization
+Value Bearer + (value from access_token)
 
 to clean:
 ```bash
