@@ -24,3 +24,11 @@ services:
       POSTGRES_USER: docker_test
       PGDATA: /var/lib/postgresql/data/pgdata
 #    restart: always
+  frontend:
+    build: ./frontend
+    container_name: front
+    volumes:
+      - './frontend:/app'
+      - '/app/node_modules'
+    ports:
+      - "8081:8081"

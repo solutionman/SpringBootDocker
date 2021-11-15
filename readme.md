@@ -1,7 +1,14 @@
 
 #SpringBootDocker
 
-to build:
+```bash
+sudo docker-compose up -d --build
+
+sudo docker-compose down
+```
+front: http://localhost:8081/
+
+to build back:
 ```bash
 mvn -U clean install -DskipTests
 ```
