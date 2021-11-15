@@ -1,9 +1,9 @@
 version: '3'
 
 services:
-  app:
+  backend:
     build: .
-    container_name: demo
+    container_name: backend
     ports:
       - "8080:8080"
 #    restart: always

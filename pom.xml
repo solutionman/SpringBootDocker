@@ -77,7 +77,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-        <finalName>demo</finalName>
+        <finalName>backend</finalName>
     </build>
 
 </project>
