@@ -1,6 +1,6 @@
-package com.example.demo.repository;
+package com.boot.docker.repository;
 
-import com.example.demo.entity.Role;
+import com.boot.docker.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RolesRepository extends JpaRepository<Role, Long> {

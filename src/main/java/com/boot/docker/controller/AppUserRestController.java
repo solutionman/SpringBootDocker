@@ -1,12 +1,12 @@
-package com.example.demo.controller;
+package com.boot.docker.controller;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.example.demo.entity.AppUser;
-import com.example.demo.entity.Role;
-import com.example.demo.service.UserService;
+import com.boot.docker.entity.AppUser;
+import com.boot.docker.service.UserService;
+import com.boot.docker.entity.Role;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

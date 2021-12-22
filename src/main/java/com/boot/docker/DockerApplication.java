@@ -1,11 +1,11 @@
-package com.example.demo;
+package com.boot.docker;
 
-import com.example.demo.entity.AppUser;
-import com.example.demo.entity.Hero;
-import com.example.demo.entity.Role;
-import com.example.demo.repository.HeroRepository;
-import com.example.demo.repository.AppUserRepository;
-import com.example.demo.service.UserService;
+import com.boot.docker.entity.AppUser;
+import com.boot.docker.entity.Hero;
+import com.boot.docker.entity.Role;
+import com.boot.docker.repository.AppUserRepository;
+import com.boot.docker.repository.HeroRepository;
+import com.boot.docker.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.event.EventListener;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 

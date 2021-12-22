@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.boot.docker.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

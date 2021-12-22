@@ -1,9 +1,9 @@
-package com.example.demo.service;
+package com.boot.docker.service;
 
-import com.example.demo.entity.AppUser;
-import com.example.demo.entity.Role;
-import com.example.demo.repository.AppUserRepository;
-import com.example.demo.repository.RolesRepository;
+import com.boot.docker.entity.AppUser;
+import com.boot.docker.entity.Role;
+import com.boot.docker.repository.AppUserRepository;
+import com.boot.docker.repository.RolesRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

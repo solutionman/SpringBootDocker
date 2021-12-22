@@ -7,7 +7,7 @@ services:
     ports:
       - "8080:8080"
       - "8000:8000"
-    command: java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=:8000 -jar backend.jar
+    command: java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8000 -jar backend.jar
     #    restart: always
     depends_on:
       - db

@@ -1,4 +1,4 @@
-package com.example.demo.secutiry;
+package com.boot.docker.secutiry;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,7 +1,7 @@
-package com.example.demo.controller;
+package com.boot.docker.controller;
 
-import com.example.demo.entity.Hero;
-import com.example.demo.repository.HeroRepository;
+import com.boot.docker.repository.HeroRepository;
+import com.boot.docker.entity.Hero;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

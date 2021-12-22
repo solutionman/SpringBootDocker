@@ -1,7 +1,7 @@
-package com.example.demo.service;
+package com.boot.docker.service;
 
-import com.example.demo.entity.AppUser;
-import com.example.demo.entity.Role;
+import com.boot.docker.entity.AppUser;
+import com.boot.docker.entity.Role;
 
 import java.util.List;
 
