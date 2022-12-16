@@ -11,7 +11,9 @@ mvn -U clean install -DskipTests
 to build front:
 ```bash
 cd frontend
-npm run build
+npm install
+export NODE_OPTIONS=--openssl-legacy-provider
+npm run build -openssl-legacy-provider
 ```
 to run:
 ```bash
